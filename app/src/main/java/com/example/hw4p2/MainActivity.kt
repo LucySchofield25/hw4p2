@@ -241,11 +241,6 @@ fun MainGameScreen() {
                 LetterBank(gameState.guessedLetters) { letter ->
                     updateGameState(guessLogic(gameState, letter))
                 }
-                HintButton(gameState) {
-                    updateGameState(hintLogic(gameState))
-                }
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(gameState.hintMssg, style = MaterialTheme.typography.bodyMedium)
                 Button(onClick = {
                     val newGameState = newGame()
                     updateGameState(newGameState)
